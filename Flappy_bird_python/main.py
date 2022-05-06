@@ -1,5 +1,6 @@
 from turtle import bgcolor
-import pygame, sys,time,random
+import pygame, sys,time,random,os
+PastaApp = os.path.dirname(__file__)
 def desenhar_chao():
     janela.blit(floor_surface,(floor_x_position,900))
     janela.blit(floor_surface,(floor_x_position + 576,900))
@@ -36,23 +37,23 @@ relogio = pygame.time.Clock()
 gravidade = 0.40
 move_bird = 0
 
-bg_surface = pygame.image.load("sprites/background-day.png").convert()
+bg_surface = pygame.image.load("Flappy_bird_python/sprites/background-day.png").convert()
 bg_surface = pygame.transform.scale2x(bg_surface)
 
-floor_surface = pygame.image.load("sprites/base.png").convert()
+floor_surface = pygame.image.load("Flappy_bird_python/sprites/base.png").convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 
-bird_surface = pygame.image.load("sprites/bluebird-midflap.png").convert_alpha()
+bird_surface = pygame.image.load("Flappy_bird_python/sprites/bluebird-midflap.png").convert_alpha()
 bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center = (100,512))
 
-pipe_surface = pygame.image.load("sprites/pipe-green.png")
+pipe_surface = pygame.image.load("Flappy_bird_python/sprites/pipe-green.png")
 pipe_surface= pygame.transform.scale2x(pipe_surface)
 cano_cima = [400,600,800]
 cano_lista = []
 spaw_cano = pygame.USEREVENT
 pygame.time.set_timer(spaw_cano,1200)
-font = pygame.font.Font('GAME_glm.ttf', 32)
+font = pygame.font.Font('Flappy_bird_python/GAME_glm.ttf', 32)
 text = font.render('BRUNO LUCAS', True, (255,0,0), (0,255,0))
 
 floor_x_position = 0
